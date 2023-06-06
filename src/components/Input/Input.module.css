@@ -1,0 +1,22 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input input{
+    outline: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: #e9ecfa;
+    border: 1px solid #92a4ea;
+}
+.input input:focus {
+    background: #e9ecfa;
+    border-color: #92a4ea;
+}
+.input label{
+    color: #646d73;
+    font-size: 0.8em;
+}
