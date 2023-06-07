@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 0.5rem;
 }
-
 .input input{
     outline: none;
     width: 100%;
