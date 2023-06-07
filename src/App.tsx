@@ -1,14 +1,9 @@
 import './App.css';
-import {Login, Request} from "./pages";
-import {CenterBox} from "./components";
+import {Request} from "./pages";
 
 function App() {
     return (
-        <CenterBox>
-            <div style={{height: "60vh", width: "80vw"}}>
-                <Request/>
-            </div>
-        </CenterBox>
+        <Request />
     )
 }
 

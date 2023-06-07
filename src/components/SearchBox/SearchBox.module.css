@@ -1,0 +1,46 @@
+.search{
+    position: relative;
+}
+.searchBox {
+    display: flex;
+    background: #d7d7d7;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.searchBox button {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.searchBox img{
+    width: 14px;
+}
+
+.searchBox input {
+    flex-grow: 7;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.results{
+    position: absolute;
+    background: #d7d7d7;
+    overflow: auto;
+    height: 4rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+.results button{
+    width: 100%;
+    text-align: right;
+    padding: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}

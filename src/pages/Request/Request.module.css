@@ -1,3 +1,7 @@
-.fullHeightMap{
-    height: 100vh;
+.mapBox {
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
 }

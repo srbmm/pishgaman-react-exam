@@ -6,3 +6,9 @@
     background: #efd214;
     box-shadow: 2px 1px 4px #7c7c7c;
 }
+.btn:hover{
+    background: #e1d01a;
+}
+.btn:active{
+    background: #d0bc43;
+}
