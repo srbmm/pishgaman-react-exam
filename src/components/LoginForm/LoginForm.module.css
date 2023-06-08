@@ -3,3 +3,8 @@
     text-shadow: 2px 1px 3px #ccc;
     color: #606060;
 }
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

@@ -1,13 +1,13 @@
 import 'leaflet/dist/leaflet.css'
 import {MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents} from 'react-leaflet';
-import Def from '../../constants/DefualtCenterOfMap'
+import {MAP_API} from '../../constants/API'
 import React, {useState} from "react";
 import './Map.css'
 import GreenIcon from "./Markers/GreenIcon";
 import RedIcon from "./Markers/RedIcon";
 
-
-const Location: React.FC<{ flagState: boolean }> = ({setCoords}) => {
+// Edit Event of the after loading in this component
+const Location: React.FC = ({setCoords}) => {
     const map = useMapEvents({
         mousemove(){
             setCoords(Object.values(map.getCenter()))
@@ -16,9 +16,11 @@ const Location: React.FC<{ flagState: boolean }> = ({setCoords}) => {
     return null
 }
 
+// use Leaflet and customize the map
 const Map:React.FC<{origin: Array<number>, destination: Array<number>,
     coords: [number, number]}> = ({origin, destination, coords, setCoords}) => {
     return (
+
         <MapContainer
             style={{height: "100%", width: "100%"}}
             center={coords}
@@ -28,9 +30,12 @@ const Map:React.FC<{origin: Array<number>, destination: Array<number>,
             maxBounds={[[-85.06, -180], [85.06, 180]]}
             scrollWheelZoom={true}
         >
+            {/* Get API here */}
             <TileLayer
-                url="https://map.pishgamanasia.ir/tile/{z}/{x}/{y}.png"
+                url={MAP_API}
             />
+
+            {/* Markers are here */}
             {origin.length === 0 || destination.length === 0 ? <Marker position={coords} icon={origin.length === 0 ? RedIcon : GreenIcon}>
             </Marker> : ""}
             {
@@ -39,6 +44,7 @@ const Map:React.FC<{origin: Array<number>, destination: Array<number>,
             {
                 destination.length !== 0 ? <Marker position={destination} icon={GreenIcon}></Marker>:""
             }
+
             <Location setCoords={setCoords}/>
         </MapContainer>
     );
